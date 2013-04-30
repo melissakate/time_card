@@ -1,0 +1,31 @@
+<h1>User List</h1>
+<table>
+  <%@users.each do |users|%>
+    <tr>
+    <td>
+      <%=users.first_name%>
+    </td>
+    <td>
+      <%=users.middle_name%>
+    </td>
+    <td>
+      <%=users.last_name%>
+    </td>
+    <td>
+      <%=user.course%>
+    </td>
+    <td>
+      <%=.user.year%>
+    </td>
+    <td>
+      <%=user.company_name%>
+    </td>
+    <td>
+      <%=user.started_at%>
+    </td>
+    <td>
+      <%=user.ended_at%>
+    </td>
+    </tr>
+  <%end%>
+</table>
