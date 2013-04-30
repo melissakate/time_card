@@ -1,4 +1,7 @@
 TimeCard::Application.routes.draw do
+  get"/time_entries" => "time_entries#index"
+  get"/time_entries/new" => "time_entries#new"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

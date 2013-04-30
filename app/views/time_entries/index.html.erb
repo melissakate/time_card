@@ -1,0 +1,28 @@
+<h1>
+  Time Entry
+</h1> 
+
+<a href= "/time_entries/new"> visit Time Entry </a>
+<table border="1">
+  <tr>
+    <th> Date </th>
+    <th> Time_in </th>
+    <th> Time_out </th>
+    <th> accomplishment </th>
+    <th> Remarks </th>
+
+  </tr>
+
+  <% @time_entries.each do |time_entry| %>
+    <tr>
+      <td><%= time_entry.date %> </td >
+      <td><%= time_entry.time_in %> </td >
+      <td><%= time_entry.time_out %> </td >
+      <td><%= time_entry.accomplishments %> </td >
+      <td><%= time_entry.remarks%> </td >
+
+
+              </tr>
+            <%end%> 
+          </table>
+
