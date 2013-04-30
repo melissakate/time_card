@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-04-30
+  time_in: 2013-04-30 15:24:42
+  time_out: 2013-04-30 15:24:42
+  accomplishments: MyText
+  remarks: MyText
+
+two:
+  date: 2013-04-30
+  time_in: 2013-04-30 15:24:42
+  time_out: 2013-04-30 15:24:42
+  accomplishments: MyText
+  remarks: MyText
