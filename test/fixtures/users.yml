@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  course: MyString
+  year: MyString
+  company: MyString
+  started_at: 2013-04-30 15:12:37
+  ended_at: 2013-04-30 15:12:37
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  course: MyString
+  year: MyString
+  company: MyString
+  started_at: 2013-04-30 15:12:37
+  ended_at: 2013-04-30 15:12:37
