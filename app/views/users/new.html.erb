@@ -1,40 +1,9 @@
 <h1>Registration</h1>
 
-<%=form_tag "/users" , mehtod:"post" %>
-<table>
-  <tr>
-    <td>
-      First Name:<input type = "text" name="first_name">
-    </td>
-    <td>
-      Middle Name:<input type = "text" name="middle_name">
-    </td>
-    <td>
-      Last Name:<br><input type = "text" name="last_name">
-      </td>
-    </tr>
-    <tr>
-      <td>
-Course:<br> <input type = "text" name="course">
-      </td>
-      <td>
-Year:<br> <input type = "text" name="year">
-      </td>
-      <td>
-        Company Name: <input type = "text" name="company">
-      </td>
-    </tr>
-    <tr>
-      <td>
-Started At: <input type = "text" name="started_at">
-      </td>
-      <td>
-        Ended At:<br> <input type = "text" name="ended_at">
-      </td>
-    </tr>
-  </table>
+<%=form_tag "/users" , method:"post" %>
+<%=render "form"%>
 
-
+ 
 <input type="submit" value="Submit">
 <br>
 <a href="/users">Go Back</a>
