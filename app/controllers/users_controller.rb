@@ -6,15 +6,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     t = @user
-     t.first_name = params[:first_name]
-     t.middle_name= params[:middle_name]
-     t.last_name = params[:last_name]
-     t.course = params[:course]
-     t.year = params[:year]
-     t.company = params[:company]
-     t.started_at = params[:started_at] 
-     t.ended_at = params[:ended_at]
-     t.save
+    t.first_name = params[:first_name]
+    t.middle_name= params[:middle_name]
+    t.last_name = params[:last_name]
+    t.course = params[:course]
+    t.year = params[:year]
+    t.company = params[:company]
+    t.started_at = params[:started_at] 
+    t.ended_at = params[:ended_at]
+    t.save
     redirect_to action: "index"
   end
   def new
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     id = params[:id]
 
     @user = User.find(id)
+
   end
 
   def show
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
     a.started_at = params[:started_at] 
     a.ended_at = params[:ended_at]
     a.save
+    redirect_to action: "show" , id: z
     @fn = params[:first_name]
     @mn = params[:middle_name]
     @ln = params[:last_name]
