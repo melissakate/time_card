@@ -1,7 +1,9 @@
 <h1>
   Time Entry
 </h1> 
-
+<%if flash[:notice]%>
+  <%=flash[:notice]%>
+<%end%>
 <a href= "/time_entries/new"> visit Time Entry </a>
 <table border="1">
   <tr>

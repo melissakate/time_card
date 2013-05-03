@@ -11,6 +11,7 @@ class TimeEntriesController < ApplicationController
     t.accomplishments = params[:accomplishments]
     t.remarks = params[:remarks]
     t.save
+    flash[:notice]="redirect"
     redirect_to action: "index"
   end
 
@@ -54,6 +55,7 @@ class TimeEntriesController < ApplicationController
     t.accomplishments = params[:accomplishments]
     t.remarks = params[:remarks]
     t.save
+    flash[:notice]="redirect"
     redirect_to action: "show", id: @time_entry.id
   end
 
