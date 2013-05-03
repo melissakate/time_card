@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     t.started_at = params[:started_at] 
     t.ended_at = params[:ended_at]
     t.save
+    flash[:notice] = "Record Created"
     redirect_to action: "index"
   end
   def new
@@ -48,14 +49,7 @@ class UsersController < ApplicationController
     a.started_at = params[:started_at] 
     a.ended_at = params[:ended_at]
     a.save
+    flash[:notice] = "Record Updated"
     redirect_to action: "show" , id: z
-    @fn = params[:first_name]
-    @mn = params[:middle_name]
-    @ln = params[:last_name]
-    @cr = params[:course]
-    @yr = params[:year]
-    @cm = params[:company]
-    @sa = params[:started_at]
-    @ea = params[:ended_at]
   end
 end
