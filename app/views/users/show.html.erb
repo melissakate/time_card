@@ -1,0 +1,70 @@
+<h1>
+  Show User
+</h1>
+<table>
+  <tr>
+    <th>
+      First Name:
+    </th>
+    <td>
+      <%=@user.first_name%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Middle Name:
+    </th>
+    <td>
+      <%=@user.middle_name%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Last Name:
+    </th>
+    <td>
+      <%=@user.last_name%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Course:
+    </th>
+    <td>
+      <%=@user.course%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Year:
+    </th>
+    <td>
+      <%=@user.year%>
+    </td>
+  </tr>
+  <tr>
+    <th>Company
+    </th>
+    <td>
+      <%=@user.company%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Started At:
+    </th>
+    <td>
+      <%=@user.started_at%>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Ended At:
+    </th>
+    <td>
+      <%= @user.ended_at%>
+    </td>
+  </tr>
+
+      
+  <%= link_to "Click here to delete this user", "/users/#{@user.id}", method: :delete %> 
