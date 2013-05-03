@@ -16,4 +16,7 @@
 
 *~
 *swo
-~swp
+*swp
+
+.rvmrc
+.ruby-version
