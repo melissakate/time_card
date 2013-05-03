@@ -5,33 +5,22 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    # t.first_name = params[:first_name]
-    # t.middle_name= params[:middle_name]
-    # t.last_name = params[:last_name]
-    # t.course = params[:course]
-    # t.year = params[:year]
-    # t.company = params[:company]
-    # t.started_at = params[:started_at] 
-    # t.ended_at = params[:ended_at]
-    # t.save
+    t = @user
+     t.first_name = params[:first_name]
+     t.middle_name= params[:middle_name]
+     t.last_name = params[:last_name]
+     t.course = params[:course]
+     t.year = params[:year]
+     t.company = params[:company]
+     t.started_at = params[:started_at] 
+     t.ended_at = params[:ended_at]
+     t.save
     redirect_to action: "index"
   end
   def new
     @user = User.new
   end
-  def a
-@user = User.new
-    @user.first_name = params[:first_name]
-    @user.middle_name= params[:middle_name]
-    @user.last_name = params[:last_name]
-    @user.course = params[:course]
-    @user.year = params[:year]
-    @user.company = params[:company]
-    @user.started_at = params[:started_at]
-    @user.ended_at = params[:ended_at]
-    @user.save
-    redirect_to action: "index"
-  end
+
   def edit
     id = params[:id]
 
