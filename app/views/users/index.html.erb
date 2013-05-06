@@ -1,15 +1,19 @@
+<div class="well well-small">
 <h1>User List</h1>
+</div>
+<div class="well well-large">
 <% if flash[:notice]%>
-  <%=flash[:notice]%>
+<div class="alert alert-info">
+  <b> Notice: </b><%=flash[:notice]%>
+</div>
 <%end%>
-<br
-<table>
+<table class ="table table-striped">
   <tr>
     <th>
       First Name:
     </th>
     <th>
-    Middle Name:
+      Middle Name:
     </th>
     <th>
       Last Name:
@@ -33,31 +37,33 @@
   </tr>
   <% @users.each do |users|%>
     <tr>
-    <td>
-      <%=users.first_name%>
-    </td>
-    <td>
-      <%=users.middle_name%>
-    </td>
-    <td>
-      <%=users.last_name%>
-    </td>
-    <td>
-      <%=users.course%>
-    </td>
-    <td>
-      <%=users.year%>
-    </td>
-    <td>
-      <%=users.company%>
-    </td>
-    <td>
-      <%=users.started_at%>
-    </td>
-    <td>
-      <%=users.ended_at%>
-    </td>
+      <td>
+        <%=users.first_name%>
+      </td>
+      <td>
+        <%=users.middle_name%>
+      </td>
+      <td>
+        <%=users.last_name%>
+      </td>
+      <td>
+        <%=users.course%>
+      </td>
+      <td>
+        <%=users.year%>
+      </td>
+      <td>
+        <%=users.company%>
+      </td>
+      <td>
+        <%=users.started_at%>
+      </td>
+      <td>
+        <%=users.ended_at%>
+      </td>
     </tr>
   <%end%>
 </table>
-<a href="/users/new">Register for an account</a>
+<a href="/users/new" class ="btn">Register for an account</a>
+</div>
+<div class="div div-inverse"> </div>
