@@ -32,11 +32,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  def delete
+
+  def destroy
     user = User.find(params[:id])
     user.destroy
+    flash[:notice] = "Record Deleted"
     redirect_to action: "index"
   end
+
   def update
     z= params[:id]
     a = User.find(z)
