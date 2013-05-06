@@ -33,33 +33,40 @@
     <th>
       Ended At:
     </th>
+    <th>
+    </th>
 
   </tr>
-  <% @users.each do |users|%>
+  <% @users.each do |user|%>
     <tr>
       <td>
-        <%=users.first_name%>
+        <%=user.first_name%>
       </td>
       <td>
-        <%=users.middle_name%>
+        <%=user.middle_name%>
       </td>
       <td>
-        <%=users.last_name%>
+        <%=user.last_name%>
       </td>
       <td>
-        <%=users.course%>
+        <%=user.course%>
       </td>
       <td>
-        <%=users.year%>
+        <%=user.year%>
       </td>
       <td>
-        <%=users.company%>
+        <%=user.company%>
       </td>
       <td>
-        <%=users.started_at%>
+        <%=user.started_at%>
       </td>
       <td>
-        <%=users.ended_at%>
+        <%=user.ended_at%>
+      </td>
+      <td>
+        <%= link_to "Show", "/users/#{user.id}" , method: "get" %>
+        <%= link_to "Edit", "/users/#{user.id}/edit" , method:"get"%>
+        <%= link_to "Delete", "/users/#{user.id}", method: "delete", confirm: "Are you sure you want to delete #{user.name}?" %>
       </td>
     </tr>
   <%end%>
