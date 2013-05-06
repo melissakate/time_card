@@ -1,7 +1,7 @@
 <h1>Registration</h1>
-
+<form class="form-horizontal">
 <%form_tag "/users" ,method:"post" %>
 <%=render "form"%>
-<%=link_to "Create" , "/users" , method: "post"  %>
-<br>
+<input type="submit" value="Register" class="btn">
+</form>
 <a href="/users">Go Back</a>

@@ -1,32 +1,56 @@
-<table>
-  <tr>
-    <td>
-    First Name:<br><input type = "text" name="first_name" value=<%=@user.first_name%>>
-    </td>
-    <td>
-      Middle Name:<br><input type = "text" name="middle_name" value=<%=@user.middle_name%>>
-    </td>
-    <td>
-      Last Name:<br><input type = "text" name="last_name" value = <%=@user.last_name%>>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    Course:<br> <input type = "text" name="course" value= <%=@user.course%>>
-    </td>
-    <td>
-      Year:<br> <input type = "text" name="year" value=<%=@user.year%>>
-    </td>
-    <td>
-      Company Name:<br> <input type = "text" name="company" value=<%=@user.company%>>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Started At:<br> <input type = "text" name="started_at" value=<%=@user.started_at%>>
-    </td>
-    <td>
-      Ended At:<br> <input type = "text" name="ended_at" value=<%=@user.ended_at%>>
-    </td>
-  </tr>
-</table>
+  <div class="contol-group">
+    <label class="control-label">First Name:</label>
+    <div class="controls">
+      <input type="text"   placeholder="First Name"  name="first_name" value=<%=@user.first_name%>>
+    </div>
+  </div><br>
+
+  <div class="control-group">
+    <label class="control-label">Middle Name</label>
+    <div class="controls">
+      <input type="text"  placeholder="Middle Name" name="middle_name" value=<%=@user.middle_name%>>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Last Name</label>
+    <div class="controls">
+      <input type="text" placeholder="Last Name" name="last_name" value=<%@user.last_name%>>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Course</label>
+    <div class="controls">
+      <input type="text" placeholder="Course" name="course" value<%@user.course%>>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label">Year</label>
+    <div class="controls">
+      <input type="text" placeholder="Year" name="year" value<%@user.year%>>                                                                                                         
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Company:</label>
+    <div class="controls">
+      <input type="text" placeholder="Company" name="company" value<%@user.company%>>                                                                                                   
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Started At:</label>
+    <div class="controls">
+     <input type="text" placeholder="Started At" name="started_at" value<%@user.started_at%>>                                                                                              
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Ended At:</label>
+    <div class="controls">
+      <input type="text" placeholder="Ended At" name="ended_at" value<%@user.ended_at%>>                                                                                                   
+    </div>
+  </div>
+
+
