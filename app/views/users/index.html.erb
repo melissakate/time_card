@@ -1,6 +1,7 @@
-<div class="well well-small">
-<h1>User List</h1>
-</div>
+<br>
+  <div class ="well well-large">
+    <h1>User List</h1>
+  </div>
 <div class="well well-large">
 <% if flash[:notice]%>
 <div class="alert alert-info">
@@ -71,6 +72,6 @@
     </tr>
   <%end%>
 </table>
-<a href="/users/new" class ="btn">Register for an account</a>
+<%= link_to "Register for an account" , new_user_path ,class:"btn btn-primary" %>
 </div>
 <div class="div div-inverse"> </div>
