@@ -4,6 +4,11 @@
   </h1> 
 </div>
 
+<form class="form-search">
+  <input type="text" class="input-medium search-query">
+  <button type="submit" class="btn">Search</button>
+</form>
+
 <div class="well well-large">
   <% if flash[:notice] %>
     <div class="alert alert-info">
@@ -46,11 +51,11 @@
     <li class="span4">
     <div class="thumbnail">
       <img data-src="http://placehold.it/300x200">
-      <h1><%= time_entry.date %></h1>
-      <h3><%= time_entry.time_in %></h3>
+      <h4><%= time_entry.date %></h4>
+      <h4><%= time_entry.time_in %></h4>
       <h4><%= time_entry.time_out %></h4>
-      <h5><%= time_entry.accomplishments %></h5>
-      <h6><%= time_entry.remarks %></h6>
+      <h4><%= time_entry.accomplishments %></h4>
+      <h4><%= time_entry.remarks %></h4>
       <%= link_to "Show", time_entry, class: "btn btn-warning" %>
     </div>
     </li>
