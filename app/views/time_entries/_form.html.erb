@@ -1,46 +1,16 @@
-<table>
-  <tr>
-    <td> 
-      date
-    </td>
-    <td>
-      <input type = "text" name="date" value=<%=@time_entry.date%>>
-  </td>
-</tr>
 
-  <tr>
-    <td>
-      time_in
-    </td> 
-    <td>
-      <input type = "text" name="time_in" value=<%=@time_entry.time_in%>>
-  </td>
-</tr>
+<%= form_for @time_entry do |f|%>
+  <br> <%= f.text_field :date%>
 
-  <tr>
-    <td>
-      time_out
-    </td>
-    <td>
-      <input type = "text" name="time_out" value=<%=@time_entry.time_out%>>
-  </td>
-</tr>
+  <br> <%= f.text_field :time_in%>
 
-  <tr>
-    <td>
-      accomplishments 
-      </td>
-      <td>
-        <input type = "text" name="accomplishments" value=<%=@time_entry.accomplishments%>>
-  </td>
 
-</tr>
-  <tr>
-    <td>
-      remarks
-    </td>
-    <td>
-      <input type = "text" name="remarks" value=<%=@time_entry.remarks%>>
-  </td>
-</tr>
-</table>
+  <br> <%= f.text_field :time_out%>
+
+  <br> <%= f.text_field :accomplishments%>
+
+  <br> <%= f.text_field :remarks%>
+
+  <br>    <%= f.submit %>
+<%end%>
+
