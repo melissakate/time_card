@@ -4,4 +4,14 @@ class User < ActiveRecord::Base
   def name
     first_name + " " + last_name
   end
+
+  def started_at
+    value = read_attribute(:started_at)
+    value.strftime("%I:%M %p") unless value.blank?
+  end
+
+  def ended_at
+    value = read_attribute(:ended_at)
+    value.strftime("%I:%M %p") unless value.blank?
+  end
 end

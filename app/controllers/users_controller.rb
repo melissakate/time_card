@@ -5,19 +5,22 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
-    t = @user
-    t.first_name = params[:first_name]
-    t.middle_name= params[:middle_name]
-    t.last_name = params[:last_name]
-    t.course = params[:course]
-    t.year = params[:year]
-    t.company = params[:company]
-    t.started_at = params[:started_at] 
-    t.ended_at = params[:ended_at]
-    t.save
+    params[:user] = {}
+    params[:user][:first_name] = params[:first_name]
+    params[:user][:last_name] = params[:last_name]
+    params[:user][:middle_name]= params[:middle_name]
+    params[:user][:course] = params[:course]
+    params[:user][:year] = params[:year]
+    params[:user][:company] = params[:company]
+    params[:user][:started_at] = params[:started_at]
+    params[:user][:ended_at] = params[:ended_at]
+
+    @user = User.new(params[:user])
+    @user.save
+
     flash[:notice] = "Record Created"
-    redirect_to action: "index"
+   # redirect_to action: "index"
+    redirect_to users_path
   end
   def new
     @user = User.new
@@ -42,18 +45,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    z= params[:id]
-    a = User.find(z)
-    a.first_name = params[:first_name]
-    a.middle_name= params[:middle_name]
-    a.last_name = params[:last_name]
-    a.course = params[:course]
-    a.year = params[:year]
-    a.company = params[:company]
-    a.started_at = params[:started_at] 
-    a.ended_at = params[:ended_at]
-    a.save
+    
+    @user = User.find(params[:id])
+    params[:user] ={}
+    params[:user][:first_name] = params[:first_name]
+    params[:user][:middle_name] = params[:middle_name]
+    params[:user][:last_name] = params[:last_name]
+    params[:user][:course] = params[:course]
+    params[:user][:year] = params[:year]
+    params[:user][:company] = params[:company]
+    params[:user][:started_at] = params[:started_at]
+    params[:user][:ended_at] = params[:ended_at]
+    @user.update_attributes(params[:user])
     flash[:notice] = "Record Updated"
-    redirect_to action: "show" , id: z
+    redirect_to users_path
   end
 end

@@ -1,10 +1,7 @@
 <h1> Edit User </h1>
-<form class="form-horizontal">
-<%=form_tag "/users/#{@user.id}" , method: "put"%> 
+<%=form_tag "/users/#{@user.id}" , method: "put", class: "form-horizontal" do %> 
 <%=render "form"%>
 
 
-<input type="submit" value="Save">
-
-</form>
+<%end%>
 <a href="/users">Go Back</a>

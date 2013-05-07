@@ -1,38 +1,63 @@
 <div class="well well-small">
-<h1>
-  Time Entry
-</h1> 
+  <h1>
+    Time Entry
+  </h1> 
 </div>
+
+<form class="form-search">
+  <input type="text" class="input-medium search-query">
+  <button type="submit" class="btn">Search</button>
+</form>
+
 <div class="well well-large">
-<%if flash[:notice]%>
-  <div class="alert alert-info">
-    <b>Notice: </br>  <%=flash[:notice]%>
-      </div>
-<%end%>
-<a href= "/time_entries/new" class="btn"> Add Time Entry </a>
-<br>
-<br>
-<table border="0" class="table table-striped" >
-  <tr>
-    <th> Date </th>
-    <th> Time_in </th>
-    <th> Time_out </th>
-    <th> accomplishment </th>
-    <th> Remarks </th>
-
-  </tr>
-
-  <% @time_entries.each do |time_entry| %>
+  <% if flash[:notice] %>
+    <div class="alert alert-info">
+      <b>Notice:</b><%=flash[:notice] %>
+    </div>
+  <% end %>
+  <a href= "/time_entries/new" class="btn"> Add Time Entry </a>
+  <br>
+  <br>
+  <table border="0" class="table table-striped" >
     <tr>
-      <td><%= time_entry.date %> </td >
-      <td><%= time_entry.time_in %> </td >
-      <td><%= time_entry.time_out %> </td >
-      <td><%= time_entry.accomplishments %> </td >
-      <td><%= time_entry.remarks%> </td >
+      <th> Date </th>
+      <th> Time_in </th>
+      <th> Time_out </th>
+      <th> accomplishment </th>
+      <th> Remarks </th>
+    </tr>
 
+    <% @time_entries.each do |time_entry| %>
+      <tr>
+        <td><%= time_entry.date %> </td>
+        <td><%= time_entry.time_in %> </td>
+        <td><%= time_entry.time_out %> </td>
+        <td><%= time_entry.accomplishments %> </td>
+        <td><%= time_entry.remarks%> </td>
 
+        <td>
+          <%= link_to "Show", "/time_entries/#{time_entry.id}", method: "get" %>
+          <%= link_to "Edit", "/time_entries/#{time_entry.id}/edit", method: "get" %>
+          <%= link_to "delete", "/time_entries/#{time_entry.id}", method: "delete", confirm: "are you sure do you want to delete this file #{time_entry.id}" %>
+        </td>
       </tr>
-            <%end%> 
-          </table>
-        </div>
 
+    <%end%> 
+  </table>
+</div>
+
+<ul class="thumbnails">
+  <% @time_entries.each do |time_entry| %>
+    <li class="span4">
+    <div class="thumbnail">
+      <img data-src="http://placehold.it/300x200">
+      <h4><%= time_entry.date %></h4>
+      <h4><%= time_entry.time_in %></h4>
+      <h4><%= time_entry.time_out %></h4>
+      <h4><%= time_entry.accomplishments %></h4>
+      <h4><%= time_entry.remarks %></h4>
+      <%= link_to "Show", time_entry, class: "btn btn-warning" %>
+    </div>
+    </li>
+  <% end %>
+</ul>
