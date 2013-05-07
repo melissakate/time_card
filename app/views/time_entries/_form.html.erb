@@ -1,15 +1,41 @@
+<%= form_for @time_entry, html: { class: "form-horizontal"} do |f|%>
+  <div class="control-group">
+    <%= f.label :date, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :date %>
+    </div>
+  </div>
 
-<%= form_for @time_entry do |f|%>
-  <br> <%= f.text_field :date%>
+  <div class="control-group">
+    <%= f.label :time_in, class: "control-label"  %>
+    <div class="controls">
+      <%= f.text_field :time_in, placeholder: "time_in" %>
+    </div>
+  </div>
 
-  <br> <%= f.text_field :time_in%>
+
+  <div class="control-group">
+    <%= f.label :time_out, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :time_out, placeholder: "time_out" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :accomplishments, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :accomplishments, placeholder: "accomplishments" %>
+    </div>
+  </div>
 
 
-  <br> <%= f.text_field :time_out%>
+  <div class="control-group">
+    <%= f.label :remarks, class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :remarks, placeholder: "remarks" %>
+    </div>
+  </div>
 
-  <br> <%= f.text_field :accomplishments%>
-
-  <br> <%= f.text_field :remarks%>
 
   <br>    <%= f.submit %>
 <%end%>

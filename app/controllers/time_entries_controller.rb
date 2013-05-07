@@ -39,6 +39,8 @@ class TimeEntriesController < ApplicationController
   end
   def new
     @time_entry = TimeEntry.new
+    @time_entry.time_in = Time.now.strftime("%I:%H %p")
+    @time_entry.time_out = Time.now.strftime("%I:%H %p")
   end
 
 
