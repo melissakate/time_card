@@ -11,7 +11,6 @@ class TimeEntriesController < ApplicationController
   end
 
   def new
-    @time_entry = @user.time_entries.new
     @time_entry.time_in = Time.now.strftime("%I:%H %p")
   end
 
