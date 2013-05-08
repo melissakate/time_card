@@ -19,11 +19,15 @@ class TimeEntriesController < ApplicationController
   end
 
   def create
+    @user = User.find params[:user_id]
+
     t = TimeEntry.new(params[:time_entry])
     t.save
 
     flash[:notice] = "create"
-    redirect_to time_entry_path(t)
+
+    #redirect_to user_time_entry_path(@user, t)
+    redirect_to [ @user, t]
   end
 
   def update
