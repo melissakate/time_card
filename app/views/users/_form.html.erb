@@ -2,8 +2,14 @@
 
 <%= form_for @user do |user|%>
 
-
-
+  <div class="contol-group">
+    <label class="control-label">User ID:</label>
+    <div class="controls">
+      <%= user.text_field :user_id , placeholder: "User ID" %>
+    </div>
+  </div>
+  <br>
+ 
   <div class="contol-group">
     <label class="control-label">First Name:</label>
     <div class="controls">
