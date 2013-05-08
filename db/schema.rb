@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(:version => 20130508030208) do
 
   create_table "time_entries", :force => true do |t|
-    t.integer  "user_id"
     t.date     "date"
     t.time     "time_in"
     t.time     "time_out"
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130508030208) do
     t.text     "remarks"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
 # Could not dump table "users" because of following StandardError
