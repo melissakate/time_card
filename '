@@ -22,21 +22,24 @@ class TimeEntriesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    t = @user.TimeEntry.new(params[:time_entry]) 
+    
+    t = @user.TimeEntry.new(params[:time_entry])
+    
     t.save
 
     flash[:notice] = "create"
     
-    redirect_to [@user,t]
+    redirect_to [@user]
   end
 
   def update
     @user = User.find params[:user_id]
     @time_entry = @user.TimeEntry.find params[:id]
     
-     @time_entry.update_attributes(params[:id])
+     t.update_attributes(params[:time_entry])
 
     flash[:notice]="records updated"
+    redirect_to user_time_entry_path
   end
 
   def destroy

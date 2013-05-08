@@ -36,9 +36,9 @@
         <td><%= time_entry.remarks%> </td>
 
         <td>
-          <%= link_to "Show", "/time_entries/#{time_entry.id}", method: "get" %>
-          <%= link_to "Edit", "/time_entries/#{time_entry.id}/edit", method: "get" %>
-          <%= link_to "delete", "/time_entries/#{time_entry.id}", method: "delete", confirm: "are you sure do you want to delete this file #{time_entry.id}" %>
+          <%= link_to "Show", "/users/#{params[:user_id]}/time_entries/#{time_entry.id}", method: "get" %>
+          <%= link_to "Edit", "/users/#{params[:user_id]}/time_entries/#{time_entry.id}/edit", method: "get" %>
+          <%= link_to "delete", "/users/#{params[:user_id]}/time_entries/#{time_entry.id}", method: "delete", confirm: "are you sure do you want to delete this file #{time_entry.id}" %>
         </td>
       </tr>
 
