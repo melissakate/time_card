@@ -1,13 +1,13 @@
 
 
 <%= form_for @user do |user|%>
-
+  <div class="control-group">
     <label class="control-label">First Name:</label>
     <div class="controls">
       <%= user.text_field :first_name , placeholder: "First Name" %>
     </div>
   </div>
-  <br>
+
   <div class="control-group">
     <label class="control-label">Middle Name</label>
     <div class="controls">

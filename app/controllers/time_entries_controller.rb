@@ -20,11 +20,12 @@ class TimeEntriesController < ApplicationController
   end
 
   def create
-    t = @user.time_entries.new(params[:time_entry]) 
+    t = @user.time_entries.new()
+    t.time_in = Time.now
     t.save
 
-    flash[:notice] = "create"
-    redirect_to user_time_entry_path(@user, t)
+    flash[:notice] = "You successfully timed in"
+    redirect_to users_path(@user)
   end
 
   def update

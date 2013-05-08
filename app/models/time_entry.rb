@@ -12,5 +12,10 @@ class TimeEntry < ActiveRecord::Base
     value = read_attribute(:time_out)
     value.strftime("%I:%M %p") if value.present?
   end
+  
+  def timed
+    value = Time.now
+    value.strftime("%I:%M %p") if value.present?
+  end
 
 end
