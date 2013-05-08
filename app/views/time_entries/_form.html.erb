@@ -3,7 +3,7 @@
   <strong>Warning!</strong> Check your information correctly.
   </div>
 
-<%= form_for @time_entry, html: { class: "form-horizontal"} do |f|%>
+<%= form_for [@user, @time_entry], html: { class: "form-horizontal"} do |f|%>
   <div class="control-group">
     <%= f.label :date, class: "control-label" %>
     <div class="controls">

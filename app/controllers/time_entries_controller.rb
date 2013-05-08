@@ -9,9 +9,9 @@ class TimeEntriesController < ApplicationController
   end
 
   def new
-    @time_entry = TimeEntry.new
+    @user = User.find params[:user_id]
+    @time_entry = @user.time_entries.new
     @time_entry.time_in = Time.now.strftime("%I:%H %p")
-    @time_entry.time_out = Time.now.strftime("%I:%H %p")
   end
 
   def edit
