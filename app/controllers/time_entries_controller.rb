@@ -21,6 +21,7 @@ class TimeEntriesController < ApplicationController
   def create
     t = @user.time_entries.new()
     t.time_in = Time.now
+    t.date = Date.today
     t.save
 
     flash[:notice] = "You successfully timed in"
