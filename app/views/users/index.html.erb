@@ -11,6 +11,9 @@
 <table class ="table table-striped">
   <tr>
     <th>
+      User ID:
+    </th>
+    <th>
       First Name:
     </th>
     <th>
@@ -41,6 +44,9 @@
   <% @users.each do |user|%>
     <tr>
       <td>
+        <%=user.user_id%>
+      </td>
+      <td>
         <%=user.first_name%>
       </td>
       <td>
@@ -67,7 +73,7 @@
       <td>
         <%= link_to "Show", "/users/#{user.id}" , method: "get" %>
         <%= link_to "Edit", "/users/#{user.id}/edit" , method:"get"%>
-        <%= link_to "Delete", "/users/#{user.id}", method: "delete", confirm: "Are you sure you want to delete #{user.name}?" %>
+        <%= link_to "Delete", "/users/#{user.id}", method: "delete", confirm: "Are you sure you want to delete this user?" %>
       </td>
     </tr>
   <%end%>

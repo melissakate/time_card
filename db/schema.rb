@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20130508030208) do
     t.text     "remarks"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "user_id"
+    t.integer  "user_id"
   end
 
 # Could not dump table "users" because of following StandardError
