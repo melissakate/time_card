@@ -5,21 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    params[:user] = {}
-    params[:user][:first_name] = params[:first_name]
-    params[:user][:last_name] = params[:last_name]
-    params[:user][:middle_name]= params[:middle_name]
-    params[:user][:course] = params[:course]
-    params[:user][:year] = params[:year]
-    params[:user][:company] = params[:company]
-    params[:user][:started_at] = params[:started_at]
-    params[:user][:ended_at] = params[:ended_at]
 
-    @user = User.new(params[:user])
-    @user.save
-
+       t = User.new(params[:user])
+    t.save
     flash[:notice] = "Record Created"
-   # redirect_to action: "index"
     redirect_to users_path
   end
   def new
@@ -47,16 +36,7 @@ class UsersController < ApplicationController
   def update
     
     @user = User.find(params[:id])
-    params[:user] ={}
-    params[:user][:first_name] = params[:first_name]
-    params[:user][:middle_name] = params[:middle_name]
-    params[:user][:last_name] = params[:last_name]
-    params[:user][:course] = params[:course]
-    params[:user][:year] = params[:year]
-    params[:user][:company] = params[:company]
-    params[:user][:started_at] = params[:started_at]
-    params[:user][:ended_at] = params[:ended_at]
-    @user.update_attributes(params[:user])
+   @user.update_attributes(params[:user])
     flash[:notice] = "Record Updated"
     redirect_to users_path
   end
