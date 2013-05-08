@@ -1,5 +1,5 @@
 class TimeEntry < ActiveRecord::Base
-  attr_accessible :accomplishments, :date, :remarks, :time_in, :time_out
+  attr_accessible :user_id :accomplishments, :date, :remarks, :time_in, :time_out
   belongs_to:User :user_id
 
   def time_in
