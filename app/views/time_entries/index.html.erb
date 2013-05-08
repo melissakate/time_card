@@ -15,7 +15,7 @@
       <b>Notice:</b><%=flash[:notice] %>
     </div>
   <% end %>
-  <a href= "/time_entries/new" class="btn"> Add Time Entry </a>
+       <%= link_to "Add Entry", new_user_time_entry_path(params[:user_id]), class: "btn btn-warning" %>
   <br>
   <br>
   <table border="0" class="table table-striped" >
@@ -51,12 +51,12 @@
     <li class="span4">
     <div class="thumbnail">
       <img data-src="http://placehold.it/300x200">
-      <h4><%= time_entry.date %></h4>
+      <h6><%= time_entry.date %></h4>
       <h4><%= time_entry.time_in %></h4>
       <h4><%= time_entry.time_out %></h4>
       <h4><%= time_entry.accomplishments %></h4>
       <h4><%= time_entry.remarks %></h4>
-      <%= link_to "Show", time_entry, class: "btn btn-warning" %>
+      <%= link_to "Show", user_time_entry_path(params[:user_id],time_entry.id), class: "btn btn-warning" %>
     </div>
     </li>
   <% end %>
