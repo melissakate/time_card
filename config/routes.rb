@@ -1,7 +1,8 @@
 TimeCard::Application.routes.draw do
   resources :time_entries
 
-resources:users
+resources:users 
+
  # post "/users" => "users#create" 
   # sa view: create display submitted using form 
  # get"/time_entries" => "time_entries#index"
