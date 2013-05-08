@@ -9,14 +9,13 @@
   <button type="submit" class="btn">Search</button>
 </form>
 
-<div class="well well-large">
   <% if flash[:notice] %>
+<div class="well well-large">
     <div class="alert alert-info">
       <b>Notice:</b><%=flash[:notice] %>
     </div>
-  <% end %>
-  <%= link_to "Add Entry", new_user_time_entry_path(params[:user_id]), class: "btn btn-warning" %>
 </div>
+  <% end %>
 
 <ul class="thumbnails">
   <% @time_entries.each do |time_entry| %>

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
   end
 
   def new
@@ -18,15 +19,21 @@ class UsersController < ApplicationController
 
   def create
     u = User.new(params[:user])
+    u.date = Date.today
     u.save
 
     flash[:notice] = "Record Created"
-    redirect_to user_path(u)
+    redirect_to users_path
   end
 
   def update
+    #search yung time entry for today
+    #lagyan ng timeout using current time
+    #
     @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
+    t =  @user.time_entries.where(date: Date.today)
+    t.time_out = Time.now
+    t.update_attributes(params[:user])
 
     flash[:notice] = "Record Updated"
     redirect_to user_path(@user)

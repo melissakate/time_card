@@ -24,7 +24,7 @@ class TimeEntriesController < ApplicationController
     t.save
 
     flash[:notice] = "You successfully timed in"
-    redirect_to users_path(@user)
+    redirect_to users_path
   end
 
   def update

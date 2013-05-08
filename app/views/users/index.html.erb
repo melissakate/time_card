@@ -11,28 +11,16 @@
 <table class ="table table-striped">
   <tr>
     <th>
-      First Name:
+       Name:
     </th>
     <th>
-      Middle Name:
-    </th>
-    <th>
-      Last Name:
-    </th>
-    <th>
-      Course:
-    </th>
-    <th>
-      Year:
+      Course/Year
     </th>
     <th>
       Company:
     </th>
     <th>
-      Started At:
-    </th>
-    <th>
-      Ended At:
+      Stay Duration:
     </th>
     <th>
       Action:
@@ -44,36 +32,28 @@
   <% @users.each do |user|%>
     <tr>
       <td>
-        <%=user.first_name%>
-      </td>
+      <%= user.last_name%>, <%= user.first_name%> <%=user.middle_name %>
       <td>
-        <%=user.middle_name%>
-      </td>
-      <td>
-        <%=user.last_name%>
-      </td>
-      <td>
-        <%=user.course%>
-      </td>
-      <td>
-        <%=user.year%>
+      <%=user.course%><%=user.year%>
       </td>
       <td>
         <%=user.company%>
       </td>
       <td>
-        <%=user.started_at%>
-      </td>
-      <td>
-        <%=user.ended_at%>
+        From: <%=user.started_at%><br>
+      To:  <%=user.ended_at%>
       </td>
       <td>
         <%= link_to "Show", "/users/#{user.id}" , method: "get" %>
         <%= link_to "Edit", "/users/#{user.id}/edit" , method:"get"%>
         <%= link_to "Delete", "/users/#{user.id}", method: "delete", confirm: "Are you sure you want to delete this user?" %>
+        <br>
+        <%= link_to "View Time Entries", "/users/#{user.id}/time_entries" , method: :get %>
       </td>
         <td> 
         <%= link_to "Time In", "/users/#{user.id}/time_entries" , method: :post , class: "btn" %>
+        <%= link_to "Time Out", "/users/#{user.id}/time_entries/#{user.time_entries.where(date: Date.today)}" , method: :put , class: "btn" %>
+
       </td>
     
     </tr>

@@ -3,13 +3,15 @@ class User < ActiveRecord::Base
 
   has_many :time_entries
 
+ 
+
   def started_at
     value = read_attribute(:started_at)
-    value.strftime("%I:%M %p") unless value.blank?
+    value.strftime("%-d/%-m/%y") unless value.blank?
   end
 
   def ended_at
     value = read_attribute(:ended_at)
-    value.strftime("%I:%M %p") unless value.blank?
+    value.strftime("%-d/%-m/%y") unless value.blank?
   end
 end
