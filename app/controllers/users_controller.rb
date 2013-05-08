@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     u.save
 
     flash[:notice] = "Record Created"
-    redirect_to user_path(user)
+    redirect_to user_path(u)
   end
 
   def update
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user])
 
     flash[:notice] = "Record Updated"
-    redirect_to user_path(user)
+    redirect_to user_path(@user)
   end
 
   def destroy
