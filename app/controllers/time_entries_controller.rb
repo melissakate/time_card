@@ -23,7 +23,7 @@ class TimeEntriesController < ApplicationController
     t = TimeEntry.new(params[:time_entry])
     t.save
     flash[:notice] = "create"
-    redirect_to action: "index"
+    redirect_to time_entries_path 
   end
 
   def update
@@ -31,13 +31,14 @@ class TimeEntriesController < ApplicationController
     @time_entry.update_attributes(params[:time_entry])
 
     flash[:notice]="records updated"
-    redirect_to action: "show", id: @time_entry.id
+    #redirect_to action: "show", id: @time_entry.id
+    redirect_to time_entry_path(@time_entry.id)
   end
 
   def destroy
     time_entry = TimeEntry.find(params[:id])
     time_entry.destroy
-    redirect_to action: "index"
+    redirect_to time_entries_path
   end
 
 end

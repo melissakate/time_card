@@ -11,9 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430072442) do
+ActiveRecord::Schema.define(:version => 20130508030208) do
 
   create_table "time_entries", :force => true do |t|
+    t.integer  "user_id"
     t.date     "date"
     t.time     "time_in"
     t.time     "time_out"
@@ -23,17 +24,7 @@ ActiveRecord::Schema.define(:version => 20130430072442) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.string   "course"
-    t.string   "year"
-    t.string   "company"
-    t.time     "started_at"
-    t.time     "ended_at"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'id' for column 'time_enrty'
 
 end
