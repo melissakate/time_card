@@ -1,14 +1,15 @@
-
+<!DOCTYPE html>
 %html
   %head
-    = stylesheet_link_tag "application" , :media => "all" 
+    %title TimeCard 
+    = stylesheet_link_tag    "application", :media => "all" 
     = javascript_include_tag "application" 
-    = csrf_meta_tags
-    %title 
-      TimeCard
-      
+    = csrf_meta_tags 
+  
   %body.a
+
+
+
     .container
       .row
-        = yield
-            
+        = yield 

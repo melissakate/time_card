@@ -1,0 +1,24 @@
+%h1 Time entry show
+%table
+  %tr
+    %td
+      date
+      = @time_entry.date
+  %tr
+    %td
+      time_in
+      = @time_entry.time_in
+  %tr
+    %td
+      time_out
+      = @time_entry.time_out
+  %tr
+    %td
+      accomplishments
+      = @time_entry.accomplishments
+  %tr
+    %td
+      remarks
+      = @time_entry.remarks
+
+= link_to "Click here to delete this time_entry", "/users/#{params[:user_id]}/time_entries/#{params[:id]}", method: :delete 

@@ -1,0 +1,25 @@
+.well.well-large
+  %h1 Time Entry
+
+  %form.form-search
+    %input.input-medium.search-query{ type: "text" }
+    %button.btn{ type:"submit" } Search
+
+.well.well-large
+  - if flash[:notice] 
+    .alert.alert-info
+    %b Notice:
+    = flash[:notice]    
+
+  %ul.thumbnails
+    - @time_entries.each do |time_entry|
+      %li.span4
+        .thumbnail
+          %img{ src: "http://placehold.it/300x200" }
+        %h6= time_entry.date
+        %h4= time_entry.time_in
+        %h4= time_entry.time_out
+        %h4= time_entry.accomplishments
+        %h4= time_entry.remarks
+        = link_to "Show", user_time_entry_path(params[:user_id],time_entry.id), class: "btn btn-warning"
+
