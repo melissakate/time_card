@@ -1,0 +1,53 @@
+
+
+= form_for @user do |user|
+  .control-group
+    %label.control-label
+      First Name:
+    .controls
+      = user.text_field :first_name , placeholder: "First Name" 
+      
+  .control-group
+    %label.control-label
+      Middle Name:
+    .controls
+      = user.text_field :middle_name , placeholder: "Middle Name"
+
+  .control-group
+    %label.control-label
+      Last Name:
+    .controls
+      = user.text_field :last_name , placeholder: "Last Name" 
+
+  .control-group
+    %label.control-label
+      Course:
+    .controls
+      = user.text_field :course , placeholder: "Course"
+
+  .control-group
+    %label.control-label
+      Year:
+    .controls
+      = user.text_field :year , placeholder: "Year"
+
+  .control-group
+    %label.control-label
+      Company:
+    .controls
+      = user.text_field :company , placeholder: "Company" 
+    
+  .control-group
+    %label.control-label
+      Started At:
+    .controls
+      = user.text_field :started_at , placeholder: "Started At" 
+    
+  .control-group
+    %label.control-label
+      Ended At:
+    .controls
+      = user.text_field :ended_at , placeholder: "Ended At" 
+  
+  = user.submit class:"btn btn-primary"
+

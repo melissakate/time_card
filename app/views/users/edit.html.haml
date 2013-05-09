@@ -1,0 +1,5 @@
+%h1 Edit User
+
+= form_tag "/users/#{@user.id}", method:"put", class: "form-horizontal" do 
+  = render "form" 
+= link_to "Home" , users_path , method: "get" ,class: "btn btn-primary"

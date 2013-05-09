@@ -1,0 +1,46 @@
+%h1
+  Show User
+%table
+  %tr
+    %th
+      First Name:
+    %td
+      = @user.first_name
+  %tr
+    %th
+      Middle Name:
+    %td
+      = @user.middle_name
+  %tr
+    %th
+      Last Name:
+    %td
+      = @user.last_name
+  %tr
+    %th
+      Course:
+    %td
+      = @user.course
+  %tr
+    %th
+      Year:
+    %td
+      = @user.year
+  %tr
+    %th 
+      Company
+    %td
+      = @user.company
+  %tr
+    %th
+      Started At:
+    %td
+      = @user.started_at
+  %tr
+    %th
+      Ended At:
+    %td
+      = @user.ended_at
+= link_to "Click here to delete this user", "/users/#{@user.id}", method: :delete
+%br
+= link_to "Home" , "/users" ,class: "btn" 

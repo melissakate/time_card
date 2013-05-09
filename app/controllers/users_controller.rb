@@ -30,11 +30,10 @@ class UsersController < ApplicationController
     #lagyan ng timeout using current time
     #
     @user = User.find(params[:id])
-    t =  @user.time_entries.where(date: Date.today)
-    t.update_attributes(params[:user])
 
+    @user.update_attributes(params[:user])
     flash[:notice] = "Record Updated"
-    redirect_to user_path(@user)
+    redirect_to users_path
   end
 
   def destroy
