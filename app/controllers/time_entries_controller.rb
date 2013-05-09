@@ -27,7 +27,7 @@ class TimeEntriesController < ApplicationController
     @time_entry.update_attributes(time_out: Time.now)
 
     flash[:notice]="records updated"
-    redirect_to user_time_entry_path(@user, @time_entry)
+    redirect_to users_path
   end
 
   def destroy
