@@ -10,10 +10,12 @@ class TimeEntriesController < ApplicationController
     @time_entry = @user.time_entries.find(params[:id])
   end
 
+
   def create
     t = @user.time_entries.new()
     t.date = Date.today
     t.time_in = Time.now
+    t.date = Date.today
     t.save
 
     flash[:notice] = "You successfully timed in"
@@ -22,8 +24,7 @@ class TimeEntriesController < ApplicationController
 
   def update
     @time_entry = @user.time_entries.find params[:id]
-
-    @time_entry.update_attributes(params[:id])
+    @time_entry.update_attributes(time_out: Time.now)
 
     flash[:notice]="records updated"
     redirect_to user_time_entry_path(@user, @time_entry)

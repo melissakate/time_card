@@ -1,0 +1,59 @@
+%br
+  .well.well-large
+    %h1
+      User List
+  .well.well-large
+    - if flash[:notice]
+      .alert.alert-sucess 
+        %b Notice: 
+        = flash[:notice]  
+    = link_to "Register!", new_user_path , method: "get"
+    %table.table.table-striped
+      %tr
+        %th
+          Name:
+        %th
+          Course/Year
+        %th
+          Company:
+        %th
+          Stay Duration:
+        %th
+          Action:
+        %th
+          Time:
+      -@users.each do |user|
+      %tr
+        %td
+          = user.last_name 
+          = user.first_name 
+          = user.middle_name 
+        %td
+          =user.course 
+          =user.year
+        %td
+          =user.company
+        %td
+          From:
+          = user.started_at 
+          %br
+          To:
+          = user.ended_at
+        %td
+          = link_to "Show", "/users/#{user.id}" , method: "get"
+          |
+          = link_to "Edit", "/users/#{user.id}/edit" , method:"get"
+          |
+          = link_to "Delete", "/users/#{user.id}", method: "delete", confirm: "Are you sure you want to delete this user?" 
+          %br
+          = link_to "View Time Entries", "/users/#{user.id}/time_entries" , method: :get 
+        %td
+          - teft = user.time_entry_for_today  
+            - if teft.blank? or (teft.present? && teft.time_in.blank?) 
+              = link_to "Time In", "/users/#{user.id}/time_entries" , method: :post , class: "btn"
+            - elsif teft.time_in.present? && teft.time_out.blank? 
+              = link_to "Time Out", "/users/#{user.id}/time_entries/#{teft.id}" , method: :put , class: "btn"
+            - else
+              You have already timed out.
+
+
