@@ -51,11 +51,25 @@
         <%= link_to "View Time Entries", "/users/#{user.id}/time_entries" , method: :get %>
       </td>
         <td> 
+
+
+      <% teft = user.time_entry_for_today %>
+
+      <% if teft.blank? or (teft.present? && teft.time_in.blank?) %>
         <%= link_to "Time In", "/users/#{user.id}/time_entries" , method: :post , class: "btn" %>
-        <%= link_to "Time Out", "/users/#{user.id}/time_entries/#{user.time_entries.where(date: Date.today)}" , method: :put , class: "btn" %>
+
+      <% elsif teft.time_in.present? && teft.time_out.blank? %>
+        <%= link_to "Time Out", "/users/#{user.id}/time_entries/#{teft.id}" , method: :put , class: "btn" %>
+      <% else %>
+        You have already timed out.
+      <% end %>
+
+
+
+
+
 
       </td>
-    
     </tr>
   <%end%>
 </table>

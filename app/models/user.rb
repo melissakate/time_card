@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :time_entries
 
- 
-
   def started_at
     value = read_attribute(:started_at)
     value.strftime("%-d/%-m/%y") unless value.blank?
@@ -13,5 +11,9 @@ class User < ActiveRecord::Base
   def ended_at
     value = read_attribute(:ended_at)
     value.strftime("%-d/%-m/%y") unless value.blank?
+  end
+
+  def time_entry_for_today
+    time_entries.where(date: Date.today).last
   end
 end
