@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def create
     u = User.new(params[:user])
-    u.date = Date.today
     u.save
 
     flash[:notice] = "Record Created"
@@ -32,7 +31,6 @@ class UsersController < ApplicationController
     #
     @user = User.find(params[:id])
     t =  @user.time_entries.where(date: Date.today)
-    t.time_out = Time.now
     t.update_attributes(params[:user])
 
     flash[:notice] = "Record Updated"
