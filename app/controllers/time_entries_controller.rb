@@ -10,21 +10,14 @@ class TimeEntriesController < ApplicationController
     @time_entry = @user.time_entries.find(params[:id])
   end
 
-  def new
-    @time_entry.time_in = Time.now.strftime("%I:%H %p")
-  end
-
-  def edit
-    @time_entry = @user.time_entries.find params[:id]
-  end
-
   def create
     t = @user.time_entries.new()
+    t.date = Date.today
     t.time_in = Time.now
     t.save
 
     flash[:notice] = "You successfully timed in"
-    redirect_to users_path(@user)
+    redirect_to users_path
   end
 
   def update
@@ -37,7 +30,7 @@ class TimeEntriesController < ApplicationController
   end
 
   def destroy
-    time_entry = TimeEntry.find(params[:id])
+    time_entry = @user.time_entries.find(params[:id])
     time_entry.destroy
 
     redirect_to user_time_entries_path(@user)
