@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   end
 
   def time_entry_for_today
-    time_entries.where(date: Date.today).last
+    value = TimeEntry.where(date: Date.today).last
   end
 end

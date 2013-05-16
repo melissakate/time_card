@@ -1,5 +1,8 @@
 %h1 Registration
 
-= form_tag "/users", method:"post", class: "form-horizontal" do 
-  = render "form" 
 = link_to "Home" , users_path , method: "get" ,class: "btn btn-primary"
+%br
+%br
+.well.well-small
+  = form_tag "/users", method:"post", class: "form-horizontal" do 
+    = render "form" 
