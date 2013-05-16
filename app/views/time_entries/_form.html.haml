@@ -1,47 +1,34 @@
-<div class="alert">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Warning!</strong> Check your information correctly.
-  </div>
-
-<%= form_for [@user,@time_entry], html: { class: "form-horizontal"} do |f|%>
-  <div class="control-group">
-    <%= f.label :date, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :date %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :time_in, class: "control-label"  %>
-    <div class="controls">
-      <%= f.text_field :time_in, placeholder: "time_in" %>
-    </div>
-  </div>
+.alert
+  %button type="button" class="close" data-dismiss="alert">&times;</button>
+  %strong Warning! Check your information correctly.
 
 
-  <div class="control-group">
-    <%= f.label :time_out, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :time_out, placeholder: "time_out" %>
-    </div>
-  </div>
+= form_for [@user,@time_entry], html: { class: "form-horizontal"} do |f|
+  .control-group
+    = f.label :date, class: "control-label" 
+    .controls
+      = f.text_field :date 
 
-  <div class="control-group">
-    <%= f.label :accomplishments, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :accomplishments, placeholder: "accomplishments" %>
-    </div>
-  </div>
+  .control-group
+    = f.label :time_in, class: "control-label"  
+    .controls
+      = f.text_field :time_in, placeholder: "time_in" 
+  
+  .control-group
+    = f.label :time_out, class: "control-label" 
+  .controls
+      = f.text_field :time_out, placeholder: "time_out" 
+  
+  .control-group
+    = f.label :accomplishments, class: "control-label" 
+    .controls
+      = f.text_field :accomplishments, placeholder: "accomplishments"
+  
+  .control-group
+  = f.label :remarks, class: "control-label" 
+    .controls
+      = f.text_field :remarks, placeholder: "remarks" 
+    
+  %br    = f.submit 
 
-
-  <div class="control-group">
-    <%= f.label :remarks, class: "control-label" %>
-    <div class="controls">
-      <%= f.text_field :remarks, placeholder: "remarks" %>
-    </div>
-  </div>
-
-
-  <br>    <%= f.submit %>
-<%end%>
 
