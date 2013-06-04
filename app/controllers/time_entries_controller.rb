@@ -22,6 +22,14 @@ class TimeEntriesController < ApplicationController
     redirect_to users_path
   end
 
+ def edit
+     @time_entry = @user.time_entries.find(params[:id])
+  end
+  def upd_acc
+    @time_entry = @user.time_entries.find params[:id]
+    @time_entry.update_attributes(accomplishments: params[:accomplishments]  )
+    redirect_to users_path
+  end
   def update
     @time_entry = @user.time_entries.find params[:id]
     @time_entry.update_attributes(time_out: Time.now)
